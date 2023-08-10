@@ -21,4 +21,4 @@ async def on_message(message): #Направлена на общение с по
     if message.content.startswith('!Game'):
         await message.channel.send(random.choice(game))
 
-client.run('MTEzNTE1NDgyNzUwNTE3MjQ5MA.Gv78z0.QdbbKb4ki64EkP5xP6ZT9LhhQAmW7n3y90LHeM')
+client.run('#token')
