@@ -3,7 +3,7 @@ import random
 from gen import gen_pass
 client = discord.Client(intents=discord.Intents.all())
 
-game = ['Орёл', 'Решка']
+game = ['Орёл', 'Решка', 'Пистолет']
 
 @client.event
 async def on_ready(): #функция, отражающая готовность бота к работе
@@ -18,7 +18,8 @@ async def on_message(message): #Направлена на общение с по
         await message.channel.send('hi!')
     if message.author == client.user:
         return
-    if message.content.startswith('!Game'):
+    if message.content.startswith('!game'):
         await message.channel.send(random.choice(game))
-
-client.run('#token')
+    if message.content.startswith('!help'):
+        await message.channel.send('В боте есть несколько команд, такие как !hello(это для того чтобы поздороваться с ботом), также есть команда !game(она для того чтоюы сыграть в игру "Орёл, Решка или Пистолет")) ')
+client.run('MTEzNTE1NDgyNzUwNTE3MjQ5MA.GlTO7N._DS5STiX5uXNmahjg4v0...')
